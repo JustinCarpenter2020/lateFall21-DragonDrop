@@ -7,10 +7,14 @@ class ItemsService{
   }
 
   moveItem(roomId){
-    let oldRoomIndex = AppState.rooms.findIndex(r => r.id === AppState.itemToMove.oldRoomId)
+    let oldRoom = AppState.rooms.find(r => r.id === AppState.itemToMove.oldRoomId)
     let newRoom = AppState.rooms.find(r => r.id === roomId)
-    AppState.rooms[oldRoomIndex].items = AppState.rooms[oldRoomIndex].items.filter(i => i.id !== AppState.itemToMove.id)
-    newRoom.items.push(AppState.itemToMove)
+    if(newRoom.name === 'Sleeping Quarters' && AppState.itemToMove.type == 'villager'){
+      oldRoom.items = oldRoom.items.filter(i => i.type !== 'villager')
+    } else{
+      oldRoom.items = oldRoom.items.filter(i => i.id !== AppState.itemToMove.id)
+      newRoom.items.push(AppState.itemToMove)
+    }
   }
 }
 
