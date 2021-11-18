@@ -1,8 +1,7 @@
 <template>
-     <div class="col-md-6 box" dropzone="room" @dragover.prevent @drop.prevent="dropItem()">
+     <div class="col-md-6 box">
        <div class="row mt-3 h-100 align-items-end">
-         <div class="col-3"></div>
-       <Draggable v-for="i in room.items" :key="i.id" :item='i' :roomId="room.id" />
+        <!-- Draggable Items here! -->
        </div>
       </div>
 </template>
