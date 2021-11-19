@@ -5,7 +5,7 @@ export const AppState = reactive({
   user: {},
   account: {},
 
-itemToMove: {},
+tempItem: {},
 
   rooms: [
     {id: 1, name: "Treasure Room", items: [{id: 1, name: 'Chest',type: 'treasure', image: 'src/assets/img/treasure2.png.png' }], backgroundImage: 'https://www.khuxwiki.com/w/images/e/e5/Cave_of_Wonders_-_Treasure_Room_%282%29_KHX.png'},
